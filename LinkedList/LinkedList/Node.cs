@@ -7,18 +7,33 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-   public  class Node  <T>: LinkedList<T>
+
+    public class Node<T> : LinkedList<T>
     {
+        // Each node has a reference to the next node in the list.
+        public Node Next;
+        // Each node holds a value of type T.
+        public T Data;
+        private Node head = null;
 
-        Node<T> node = new Node<T>();
 
-        public T value;
-        public Node(T value)
+        // The list is initially empty.
+
+
+        // Add a node at the beginning of the list with t as its data value.
+        public void AddNode(T t)
         {
-            this.value = value;
+            Node newNode = new Node();
+            newNode.Next = head;
+            newNode.Data = t;
+            head = newNode;
         }
+    }
 
+    }
+
+    
 
 
     }
-}
+
