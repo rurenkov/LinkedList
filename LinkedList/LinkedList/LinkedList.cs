@@ -9,28 +9,42 @@ namespace LinkedList
 {
     public class LinkedList<T>
     {
-        // T is the type of data stored in a particular instance of GenericList.
 
-       
 
-        // The following method returns the data value stored in the last node in
-        // the list. If the list is empty, the default value for type T is
-        // returned.
-        public T GetFirstAdded()
+        
+       public Node<T> head = null;   //init empty head of node
+             
+
+
+        public Node<T> CreateNode(T value)
             {
-                // The value of temp is returned as the value of the method. 
-                // The following declaration initializes temp to the appropriate 
-                // default value for type T. The default value is returned if the 
-                // list is empty.
-                T temp = default(T);
 
-                Node current = head;
-                while (current != null)
-                {
-                    temp = current.Data;
-                    current = current.Next;
-                }
-                return temp;
+            Node<T> node = new Node<T>();
+           // head = node;
+           
+            node.NodeValue = value;
+            //node.Next = head;
+
+            return node;
             }
+
+         public void Add (T value)
+        {
+            if (head == null)
+            {
+                head=CreateNode(value);
+                
+            }
+            else if (head != null && head.Next==null)
+            {
+                head.Next=CreateNode(value);
+
+            }
+        }  
+      
         }
+
     }
+    
+    
+    
