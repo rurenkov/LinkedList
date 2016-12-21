@@ -12,8 +12,10 @@ namespace LinkedList
 
     public class Node <T>
     {
-        public Node<T> Next;
-        public T NodeValue;
+
+
+        public Node<T> Next { get; set; }
+        public T NodeValue { get; set; }
     }
     
 }
